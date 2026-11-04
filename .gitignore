@@ -1,0 +1,19 @@
+# Fichiers temporaires
+*.tmp
+.tmp/
+
+# Power BI
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Préférences utilisateur / secrets
+*.user.json
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

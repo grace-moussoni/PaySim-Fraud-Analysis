@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "paysim_fraud_analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "58afac99-67d0-43b0-b87f-d7b870f586a0"
+  }
+}
