@@ -1,0 +1,351 @@
+table Transactions
+	lineageTag: b1eeec62-7c9f-47e6-9543-01d8b396fddb
+
+	column step
+		dataType: int64
+		formatString: 0
+		lineageTag: bda4d291-7232-49da-87cb-868994344bc5
+		summarizeBy: sum
+		sourceColumn: step
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 4a3a02b8-dd21-480d-9d29-6e35ea4c9702
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: 99f602ae-6705-4414-bd05-97ee50cd476c
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column isFraud
+		dataType: int64
+		formatString: 0
+		lineageTag: be6de7e5-8775-4928-a259-272e0200f8da
+		summarizeBy: sum
+		sourceColumn: isFraud
+
+		annotation SummarizationSetBy = Automatic
+
+	column isFlaggedFraud
+		dataType: int64
+		formatString: 0
+		lineageTag: a2731d9e-2b1c-4be4-bdf9-01f2f3da678b
+		summarizeBy: sum
+		sourceColumn: isFlaggedFraud
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: int64
+		formatString: 0
+		lineageTag: 707ee15e-483b-42a4-9075-1fd1c696eaee
+		summarizeBy: sum
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column Heure
+		dataType: int64
+		formatString: 0
+		lineageTag: c533083f-6f08-4958-8652-94a4f3b843c7
+		summarizeBy: sum
+		sourceColumn: Heure
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tranche_Montant
+		dataType: string
+		lineageTag: d3ae4aea-ba14-4fdf-9d1d-faba08fa701d
+		summarizeBy: none
+		sourceColumn: Tranche_Montant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Statut_Fraude
+		dataType: string
+		lineageTag: 04f7fbbb-3450-4bee-9948-53ab0c0aca5c
+		summarizeBy: none
+		sourceColumn: Statut_Fraude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resultat_Alerte
+		dataType: string
+		lineageTag: d4b305dd-efed-458a-ad79-bac7e3815647
+		summarizeBy: none
+		sourceColumn: Resultat_Alerte
+
+		annotation SummarizationSetBy = Automatic
+
+	column Depasse_Seuil_200k
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 656bcb41-7ed4-4a6b-8e74-c10c5f06ab81
+		summarizeBy: none
+		sourceColumn: Depasse_Seuil_200k
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type_Compte_Dest
+		dataType: string
+		lineageTag: b7f46bc4-a0f7-4b5b-b606-0345bb034cec
+		summarizeBy: none
+		sourceColumn: Type_Compte_Dest
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incoherence_Solde
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aaa5b6c9-486f-40d9-89fb-2acfdae3ce58
+		summarizeBy: none
+		sourceColumn: Incoherence_Solde
+
+		annotation SummarizationSetBy = Automatic
+
+	column Montant_Nul
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2c1ca4f3-716a-4763-9b77-3013073f6427
+		summarizeBy: none
+		sourceColumn: Montant_Nul
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Transactions = m
+		mode: import
+		source =
+				// =====================================================================
+				// PROJET PAYSIM - GROUPE 3 - AKIENY ACADEMY
+				// Script de nettoyage et préparation (Power Query / langage M)
+				// Table produite : "Transactions"
+				//
+				// MODE D'EMPLOI
+				// 1. Power BI Desktop > Accueil > Transformer les données
+				// 2. Nouvelle source > Requête vide > Éditeur avancé
+				// 3. Supprimer tout le contenu, coller CE script, puis modifier Chemin_CSV
+				// 4. Renommer la requête "Transactions" > Fermer et appliquer
+				//
+				// PROFIL RÉEL DU CSV (vérifié sur le fichier fourni)
+				// - 6 362 620 lignes, 11 colonnes
+				// - Valeurs manquantes (null) : 0 sur toutes les colonnes
+				// - Doublons : 0 (lignes complètes et clé step/type/amount/nameOrig/nameDest)
+				// - step : de 1 à 743 (aucun pas manquant)
+				// - type : 5 valeurs, écrites avec underscore (CASH_OUT, CASH_IN...)
+				// - amount : aucune valeur négative, mais 16 montants = 0
+				//   (ce sont 16 fraudes de type CASH_OUT)
+				// - 2 151 495 destinataires "M" (commerçants), tous en PAYMENT
+				// - Incohérences montant/soldes : 5 077 691 lignes (80 %). Elles font partie
+				//   de la logique de la simulation : on les MARQUE, on ne les supprime PAS.
+				// - Gros montants (> 501 719, règle IQR) : 338 078 lignes. Ce sont des
+				//   valeurs réelles de la simulation (max 92,4 M) : on les CONSERVE.
+				//
+				// DONC : rien à supprimer. Le nettoyage consiste à typer correctement,
+				// signaler les cas particuliers, créer les colonnes d'analyse et
+				// alléger le modèle.
+				// =====================================================================
+				
+				let
+				    // ------------------------------------------------------------
+				    // 0. SOURCE : chemin du CSV (à modifier)
+				    // ------------------------------------------------------------
+				    Chemin_CSV = "C:\PaySim\PS_20174392719_1491204439457_log.csv",
+				
+				    Source = Csv.Document(
+				        File.Contents(Chemin_CSV),
+				        [Delimiter = ",", Columns = 11, Encoding = 65001, QuoteStyle = QuoteStyle.None]
+				    ),
+				    EnTetes = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				
+				    // ------------------------------------------------------------
+				    // 1. TYPAGE (culture en-US : indispensable, car le CSV utilise le
+				    //    point décimal et Power BI en français attend la virgule)
+				    // ------------------------------------------------------------
+				    Types = Table.TransformColumnTypes(
+				        EnTetes,
+				        {
+				            {"step", Int64.Type},
+				            {"type", type text},
+				            {"amount", type number},
+				            {"nameOrig", type text},
+				            {"oldbalanceOrg", type number},
+				            {"newbalanceOrig", type number},
+				            {"nameDest", type text},
+				            {"oldbalanceDest", type number},
+				            {"newbalanceDest", type number},
+				            {"isFraud", Int64.Type},
+				            {"isFlaggedFraud", Int64.Type}
+				        },
+				        "en-US"
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 2. NORMALISATION du texte (espaces, casse) : par sécurité
+				    // ------------------------------------------------------------
+				    TypeNettoye = Table.TransformColumns(
+				        Types,
+				        {{"type", each Text.Upper(Text.Trim(_)), type text}}
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 3. VALEURS MANQUANTES : 0 attendu. Cette étape protège en cas
+				    //    de fichier modifié ; elle ne supprime rien ici.
+				    // ------------------------------------------------------------
+				    SansNull = Table.SelectRows(
+				        TypeNettoye,
+				        each [step] <> null and [type] <> null and [amount] <> null
+				            and [nameDest] <> null and [isFraud] <> null and [isFlaggedFraud] <> null
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 4. DOUBLONS : 0 constaté. Étape volontairement NON exécutée
+				    //    (Table.Distinct sur 6,3 M de lignes est très lent).
+				    //    Si besoin : Table.Distinct(SansNull)
+				    // ------------------------------------------------------------
+				
+				    // ------------------------------------------------------------
+				    // 5. DRAPEAUX QUALITÉ (on marque, on ne supprime pas)
+				    // ------------------------------------------------------------
+				    // 5a. Incohérence montant/solde côté émetteur (logique de simulation)
+				    FlagSolde = Table.AddColumn(
+				        SansNull,
+				        "Incoherence_Solde",
+				        each Number.Abs([oldbalanceOrg] - [amount] - [newbalanceOrig]) > 0.01,
+				        type logical
+				    ),
+				
+				    // 5b. Montant nul (16 cas, tous des fraudes CASH_OUT)
+				    FlagMontantNul = Table.AddColumn(
+				        FlagSolde,
+				        "Montant_Nul",
+				        each [amount] = 0,
+				        type logical
+				    ),
+				
+				    // 5c. Type de compte destinataire (M = commerçant, sans solde)
+				    TypeDest = Table.AddColumn(
+				        FlagMontantNul,
+				        "Type_Compte_Dest",
+				        each if Text.StartsWith([nameDest], "M") then "Commerçant" else "Client",
+				        type text
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 6. COLONNES TEMPORELLES (axe 3)
+				    //    step 1 = heure 0 du jour 1. Le CSV va jusqu'à 743, donc
+				    //    le jour 31 est incomplet (heures 0 à 22).
+				    // ------------------------------------------------------------
+				    Jour = Table.AddColumn(
+				        TypeDest,
+				        "Jour",
+				        each Number.IntegerDivide([step] - 1, 24) + 1,
+				        Int64.Type
+				    ),
+				    Heure = Table.AddColumn(
+				        Jour,
+				        "Heure",
+				        each Number.Mod([step] - 1, 24),
+				        Int64.Type
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 7. TRANCHES DE MONTANT (axe 2) + colonne d'ordre pour le tri
+				    // ------------------------------------------------------------
+				    Tranche = Table.AddColumn(
+				        Heure,
+				        "Tranche_Montant",
+				        each
+				            if [amount] < 10000 then "1. < 10 k"
+				            else if [amount] < 50000 then "2. 10 k - 50 k"
+				            else if [amount] < 200000 then "3. 50 k - 200 k"
+				            else if [amount] < 1000000 then "4. 200 k - 1 M"
+				            else "5. > 1 M",
+				        type text
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 8. LIBELLÉS LISIBLES pour les visuels et les légendes
+				    // ------------------------------------------------------------
+				    LibFraude = Table.AddColumn(
+				        Tranche,
+				        "Statut_Fraude",
+				        each if [isFraud] = 1 then "Fraude" else "Normale",
+				        type text
+				    ),
+				
+				    // Règle du système d'alerte : TRANSFER > 200 000 (axe 4)
+				    RegleSeuil = Table.AddColumn(
+				        LibFraude,
+				        "Depasse_Seuil_200k",
+				        each [type] = "TRANSFER" and [amount] > 200000,
+				        type logical
+				    ),
+				
+				    // Matrice de confusion : isFraud = réalité, isFlaggedFraud = prédiction
+				    Resultat = Table.AddColumn(
+				        RegleSeuil,
+				        "Resultat_Alerte",
+				        each
+				            if [isFraud] = 1 and [isFlaggedFraud] = 1 then "VP"
+				            else if [isFraud] = 1 and [isFlaggedFraud] = 0 then "FN"
+				            else if [isFraud] = 0 and [isFlaggedFraud] = 1 then "FP"
+				            else "VN",
+				        type text
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 9. ALLÈGEMENT DU MODÈLE
+				    //    - Soldes : à ne pas utiliser pour détecter la fraude
+				    //      (les fraudes détectées sont annulées, soldes faussés)
+				    //    - nameOrig / nameDest : 6 M d'identifiants uniques, très lourds.
+				    //      Pour analyser les comptes (ex. enchaînement TRANSFER puis
+				    //      CASH_OUT), retirer "nameOrig" et "nameDest" de cette liste.
+				    // ------------------------------------------------------------
+				    Allege = Table.RemoveColumns(
+				        Resultat,
+				        {"nameOrig", "nameDest", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"}
+				    ),
+				
+				    // ------------------------------------------------------------
+				    // 10. ORDRE FINAL DES COLONNES
+				    // ------------------------------------------------------------
+				    Final = Table.ReorderColumns(
+				        Allege,
+				        {
+				            "step", "Jour", "Heure", "type", "amount", "Tranche_Montant",
+				            "isFraud", "Statut_Fraude", "isFlaggedFraud", "Resultat_Alerte",
+				            "Depasse_Seuil_200k", "Type_Compte_Dest", "Incoherence_Solde", "Montant_Nul"
+				        }
+				    )
+				in
+				    Final
+				
+				// =====================================================================
+				// CONTRÔLES À FAIRE APRÈS CHARGEMENT (valeurs attendues)
+				// ---------------------------------------------------------------------
+				// Nombre de lignes ............................. 6 362 620
+				// Fraudes (isFraud = 1) ........................ 8 213   (0,129 %)
+				// Fraudes CASH_OUT / TRANSFER .................. 4 116 / 4 097
+				// Fraudes dans CASH_IN, DEBIT, PAYMENT ......... 0
+				// isFlaggedFraud = 1 ........................... 16  (tous TRANSFER)
+				// VP / FN / FP / VN ............................ 16 / 8 197 / 0 / 6 354 407
+				// TRANSFER > 200 000 ........................... 409 110
+				//   dont fraudes ............................... 2 740
+				// Fraudes TRANSFER <= 200 000 .................. 1 357
+				// Montant nul (Montant_Nul = VRAI) ............. 16
+				// Valeurs de Jour .............................. 1 à 31 (jour 31 incomplet)
+				// =====================================================================
+
+	annotation PBI_ResultType = Table
+

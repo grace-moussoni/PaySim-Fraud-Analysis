@@ -9,11 +9,11 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["PS_20174392719_1491204439457_log"]
+annotation PBI_QueryOrder = ["Transactions"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table PS_20174392719_1491204439457_log
+ref table Transactions
 
 ref cultureInfo en-US
 
