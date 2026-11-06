@@ -11,43 +11,49 @@
 
 ## 📖 Contexte du projet
 
-Le développement des services de **Mobile Money** a profondément transformé les usages financiers en facilitant les paiements, les transferts d'argent et les retraits de fonds.
+Le développement des services de **Mobile Money** a profondément transformé les usages financiers en facilitant les paiements, les transferts d'argent et les retraits de fonds. Cependant, cette démocratisation s'accompagne d'une augmentation des risques de fraude, nécessitant des mécanismes de surveillance et de détection toujours plus performants.
 
-Cependant, cette démocratisation s'accompagne d'une augmentation des risques de fraude, nécessitant des mécanismes de surveillance et de détection toujours plus performants.
+Ce projet s'appuie sur le dataset **PaySim**, un ensemble de données synthétiques reproduisant des transactions financières réelles sur 31 jours, afin d'étudier les comportements frauduleux et d'évaluer l'efficacité d'un système d'alerte automatisé basé sur des règles métiers.
 
-Ce projet s'appuie sur le dataset **PaySim**, un ensemble de données synthétiques reproduisant des transactions financières réelles, afin d'étudier les comportements frauduleux et d'évaluer l'efficacité d'un système d'alerte automatisé.
+---
+
+## 🎯 Public Cible
+
+Ce rapport et ce tableau de bord s'adressent particulièrement aux :
+- **Établissements financiers et opérateurs de Mobile Money :** pour identifier les failles d'alerte actuelles et optimiser la sécurité des transactions.
+- **Équipes de sécurité et de lutte contre la fraude (AML/Fraud Risk) :** pour calibrer de nouvelles règles métier basées sur le comportement temporel et les montants.
+- **Analystes de données et décideurs stratégiques :** pour visualiser l'impact financier de la fraude et orienter les investissements technologiques.
 
 ---
 
 ## 🎯 Objectifs
 
 Les objectifs principaux sont :
-
-- Mesurer l'ampleur réelle de la fraude.
-- Identifier les types de transactions les plus exposés.
-- Analyser les tendances temporelles des activités frauduleuses.
-- Évaluer les performances du système de détection existant.
-- Produire un tableau de bord décisionnel interactif sous Power BI.
+- Mesurer l'ampleur réelle de la fraude sur l'ensemble du dataset (6,36 M de transactions).
+- Identifier les typologies d'opérations et tranches de montants les plus exposées au risque.
+- Analyser les tendances temporelles (journalières et horaires) des activités malveillantes.
+- Évaluer rigoureusement la performance du système de détection automatisé existant (règle des 200 000).
+- Produire un tableau de bord décisionnel interactif et standardisé sous Power BI.
 
 ---
 
 ## ❓ Questions Business
 
-### 1. Ampleur de la fraude
-- Quelle est la proportion de transactions frauduleuses ?
-- Quelle valeur financière représente cette fraude ?
+1. **Ampleur de la fraude**
+   - Quelle est la proportion de transactions frauduleuses ?
+   - Quelle valeur financière représente cette fraude par rapport au volume total échangé ?
 
-### 2. Typologie des fraudes
-- Quels types de transactions sont principalement cibles ?
-- Quels montants sont impliqués dans les activités frauduleuses ?
+2. **Typologie des fraudes**
+   - Quels types de transactions sont principalement ciblés ?
+   - Quels montants et tranches financières sont impliqués dans les activités frauduleuses ?
 
-### 3. Analyse temporelle
-- Existe-t-il des pics ou des tendances dans la survenance des fraudes ?
-- Certains jours ou créneaux horaires présentent-ils davantage de risques ?
+3. **Analyse temporelle**
+   - Existe-t-il des pics ou des tendances dans la survenance des fraudes au cours du mois ?
+   - Certains créneaux horaires présentent-ils un taux de risque disproportionné ?
 
-### 4. Performance du système d'alerte
-- La règle métier actuelle permet-elle d'identifier efficacement les fraudes ?
-- Quel est son niveau de faux positifs et de faux négatifs ?
+4. **Performance du système d'alerte**
+   - La règle métier actuelle (signalement des transferts $> 200\text{ k}$) permet-elle d'identifier efficacement les fraudes ?
+   - Quel est son niveau de faux positifs (FP), de faux négatifs (FN) et quel est le montant total non détecté ?
 
 ---
 
@@ -56,224 +62,136 @@ Les objectifs principaux sont :
 ### Source
 Dataset **PaySim** officiel disponible sur Kaggle : [Synthetic Financial Datasets for Fraud Detection](https://www.kaggle.com/datasets/ealaxi/paysim1).
 
-Les données ont été générées à partir d'une simulation reproduisant des comportements observés dans un environnement de Mobile Money.
-
 ### Description
 
 | Élément | Valeur |
-|----------|---------|
-| Nombre de lignes | 6 362 620 |
-| Nombre de colonnes | 11 |
-| Période simulée | 743 pas de temps (31 jours incomplets) |
-| Type de données | Transactions financières synthétiques |
+| :--- | :--- |
+| **Nombre de lignes** | 6 362 620 |
+| **Nombre de colonnes** | 11 (8 dans la version allégée Power BI) |
+| **Période simulée** | 743 pas de temps (31 jours, jour 31 incomplet) |
+| **Type de données** | Transactions financières synthétiques Mobile Money |
 
-### Variables principales
+### Variables principales conservées
 
 | Variable | Description |
-|-----------|-------------|
+| :--- | :--- |
+| `step` | Unité de temps ($1\text{ step} = 1\text{ heure}$, de 1 à 743) |
 | `type` | Type de transaction (`CASH_IN`, `CASH_OUT`, `DEBIT`, `PAYMENT`, `TRANSFER`) |
-| `amount` | Montant de l'opération |
+| `amount` | Montant de la transaction en monnaie locale |
 | `isFraud` | Indicateur de fraude réelle (1 = Fraude, 0 = Normale) |
 | `isFlaggedFraud` | Alerte générée par le système actuel (1 = Alerte, 0 = Non alerte) |
+| `Jour` | Colonne calculée : jour du mois (1 à 31) |
+| `Heure` | Colonne calculée : heure de la journée (0 à 23) |
+| `Tranche_Montant` | Segmentation par tranche (`< 10 k`, `10 k-50 k`, `50 k-200 k`, `200 k-1 M`, `> 1 M`) |
 
 ---
 
 ## 🧠 Méthodologie
 
-Le projet combine :
-
 ### CRISP-DM
-1. Compréhension métier
-2. Compréhension des données
-3. Préparation des données (Power Query M)
-4. Analyse et modélisation
-5. Évaluation (Matrice de confusion)
-6. Restitution (Power BI)
+1. **Compréhension métier :** Définition de la problématique d'évaluation du système d'alerte et des 4 axes.
+2. **Compréhension des données :** Exploration du CSV complet (6,36 M lignes, 0 valeur manquante, 0 doublon).
+3. **Préparation des données :** Nettoyage Power Query M, typage `en-US`, suppression des colonnes lourdes de soldes/comptes.
+4. **Analyse & Modélisation :** Construction du modèle sémantique et implémentation des mesures DAX.
+5. **Évaluation :** Matrice de confusion ($VP$, $FN$, $FP$, $VN$), Rappel, Précision, Score F1.
+6. **Restitution :** Rapport Power BI interactif de 5 pages et documentation technique.
 
 ### Scrumban
-La gestion de projet est menée à travers :
-- Sprints courts
-- GitHub Project / Kanban
-- Revues collaboratives & Pull Requests
+La gestion de projet s'appuie sur un sprint unique de 4 jours piloté via un tableau Kanban (GitHub Projects), des points d'équipe quotidiens et une revue stricte par Pull Request.
 
 ---
 
-## 🏗️ Architecture Power BI
+## 🏗️ Architecture Power BI Project (.pbip)
 
-Le projet utilise le format moderne **Power BI Project (.pbip)** permettant le versioning sous Git.
+Le projet est structuré au format **Power BI Project (.pbip)** pour permettre le versioning sous Git :
 
-### Semantic Model
-```text
-sources_files/paysim_fraud_analysis.SemanticModel/
-```
-Contient :
-- Script Power Query unifié (Langage M)
-- Modèle de données et typage
-- Mesures DAX
-- Métadonnées TMDL
-
-### Report
-```text
-sources_files/paysim_fraud_analysis.Report/
-```
-Contient :
-- Visualisations graphiques
-- Pages du rapport
-- Thèmes graphiques et mises en page
+- **`sources_files/paysim_fraud_analysis.SemanticModel/`** : Contient le script Power Query M unifié, la définition des mesures DAX et les métadonnées TMDL.
+- **`sources_files/paysim_fraud_analysis.Report/`** : Contient la disposition visuelle, les pages du rapport et la charte graphique JSON.
 
 ---
 
-## 📈 Structure du Dashboard Power BI
+## 📈 Structure du Dashboard & Résultats Visuels
 
-Le rapport Power BI s'organise selon les responsabilités définies dans la note de synthèse :
+### 1. Vue d'ensemble & Synthèse
+Visualisation globale de la fraude et des 6 indicateurs clés du projet.
+![Vue d'ensemble - Synthèse](docs/images/01_dashboard_overview.png)
 
-### 1. Synthèse & Indicateurs Clés (Page Principale)
-- **KPI principaux :** Nombre de transactions (6,36 M), nombre de fraudes (8 213), taux de fraude (0,129%), montant total fraudé (~12,06 Mds).
-- Segments interactifs par type, jour, heure et statut de fraude.
+### 2. Axes 1 & 2 : Ampleur, Types et Montants
+Répartition des fraudes par type d'opération et analyse de l'explosion du risque selon les tranches de montant.
+![Axes 1 et 2 - Types et Montants](docs/images/02_fraud_by_transaction_type.png)
 
-### 2. Axes 1 & 2 : Ampleur, Types et Montants *(Christ Roland)*
-- Répartition des fraudes par type (exclusivité `CASH_OUT` et `TRANSFER`).
-- Taux de fraude par type et par tranche de montant.
-- Graphique du déséquilibre des classes et montants extrêmes.
+### 3. Axe 3 : Analyse Temporelle
+Évolution du volume de fraudes par jour et mise en évidence du pic de risque nocturne (heures 0 à 5).
+![Axe 3 - Analyse Temporelle](docs/images/03_fraud_by_day_hour.png)
 
-### 3. Axe 3 : Analyse Temporelle *(Marthinet)*
-- Évolution journalière (Jours 1 à 31) et horaire (Heures 0 à 23).
-- Matrice Jour × Heure avec mise en forme conditionnelle.
-- Mise en évidence de la sur-représentation des fraudes durant la nuit (0h - 5h).
-
-### 4. Axe 4 : Évaluation du Système d'Alerte *(Sublime)*
-- Matrice de confusion ($VP=16$, $FN=8197$, $FP=0$, $VN=6 354 407$).
-- Analyse des défaillances de la règle métier du seuil des 200 000.
-- Mesures du Rappel, Précision et estimation du montant fraudé non détecté (~11,98 Mds).
+### 4. Axe 4 : Évaluation du Système d'Alerte
+Matrice de confusion et analyse du décalage massif entre fraudes réelles et transactions signalées.
+![Axe 4 - Évaluation du Système d'Alerte](docs/images/04_alert_system_evaluation.png)
 
 ---
 
 ## 🔍 Principaux Insights
 
-- **Concentration ciblée :** Les 8 213 fraudes surviennent exclusivement sur les transactions `CASH_OUT` (4 116) et `TRANSFER` (4 097).
-- **Inefficacité du système d'alerte :** Le système de règles actuel n'a détecté que 16 fraudes sur 8 213 (Rappel de 0,19%).
-- **Comportement nocturne :** Le taux de fraude s'envole entre 0h et 5h du matin (dépassant 22% vers 3h-4h), car le volume de transactions normales chute drastiquement alors que la fraude reste constante.
-- **Tranches élevées :** Le taux de fraude atteint son sommet (2,07%) sur les montants supérieurs à 1 million.
+- **Concentration exclusive :** Les 8 213 fraudes répertoriées surviennent **exclusivement** sur deux types d'opérations : `CASH_OUT` (4 116) et `TRANSFER` (4 097). Les types `CASH_IN`, `PAYMENT` et `DEBIT` ne présentent aucune fraude (0 %).
+- **Inefficacité critique du système d'alerte :** La règle actuelle ne détecte que 16 fraudes sur 8 213, soit un **Rappel de 0,19 %**. Bien que la précision soit de 100 % (aucun faux positif), **11,98 milliards** de montants frauduleux restent non détectés (contre 78 M signalés).
+- **Explosion du risque la nuit :** Bien que le nombre de fraudes soit constant tout au long de la journée (~340 par heure), l'effondrement des transactions normales la nuit fait s'envoler le taux de fraude à plus de **22 % entre 3h et 4h du matin**. Les heures 0 à 5 concentrent 25 % des fraudes pour moins de 1 % du volume total.
+- **Risque sur les hauts montants :** Le taux de fraude passe de **0,02 %** pour les montants inférieurs à $10\text{ k}$ à **2,07 %** pour les montants supérieurs à $1\text{ M}$ (soit un risque 100 fois plus élevé).
 
 ---
 
-## 💡 Recommandations
+## 💡 Recommandations Métier
 
-- **Refonte des règles métier :** Étendre les règles d'alerte aux retraits `CASH_OUT` et aux transferts inférieurs au seuil de 200 000.
-- **Surveillance horaire renforcée :** Appliquer des contrôles de sécurité accrus (ex: validation 2FA systématique) sur la tranche horaire 0h - 5h.
-- **Détection séquentielle :** Surveiller prioritairement les enchaînements rapides de `TRANSFER` vers un compte client immédiatement suivis d'un `CASH_OUT`.
-
----
-
-## ⚠️ Limites du projet
-
-- Dataset synthétique généré par simulation.
-- Modèle simplifié pour optimiser les performances (identifiants uniques `nameOrig`/`nameDest` et soldes bruts retirés de la table principale).
-- Le jour 31 contient 23 pas de temps au lieu de 24 (s'arrête au pas 743).
+1. **Refonte et élargissement des règles métier :** Étendre immédiatement les règles d'alerte aux retraits `CASH_OUT` (qui représentent 50 % des fraudes et ne sont aucunement surveillés) et abaisser le seuil sur les `TRANSFER` sous les $200\text{ k}$.
+2. **Surveillance horaire renforcée (0h - 5h) :** Imposer une authentification forte (2FA) ou un blocage temporaire automatique des gros transferts nocturnes.
+3. **Seuils progressifs selon le montant :** Abaisser les filtres de contrôle dès que les montants dépassent $200\text{ k}$ et imposer un contrôle d'agent sur les transactions $> 1\text{ M}$.
 
 ---
 
-# 🚀 Reproduire le projet
+## ⚠️ Limites du Projet
+
+- **Dataset synthétique :** Données produites par la simulation PaySim (résultats illustratifs de mécanismes).
+- **Jour 31 incomplet :** Le pas de temps s'arrête à 743 (23 heures au lieu de 24 pour le dernier jour).
+- **Soldes non exploités :** Environ 80 % des lignes présentent des soldes incohérents en raison de l'annulation des fraudes détectées dans la simulation, justifiant leur retrait du modèle d'analyse.
+
+---
+
+# 🚀 Reproduire le Projet
 
 ## Prérequis
+- **Windows 10 / 11** *(Power BI Desktop s'exécute nativement sous Windows)*.
+- **Power BI Desktop** (dernière version supportant le format `.pbip`).
+- **Git** & **VS Code**.
 
-- **Windows 10 / 11** *(Power BI Desktop s'exécute nativement uniquement sous Windows)*.
-- **Power BI Desktop** (dernière version compatible avec le format `.pbip`).
-- **Git** & **Visual Studio Code** (optionnel pour l'édition de code TMDL/M).
+## Configuration du Jeu de Données
+1. Téléchargez le dataset `PS_20174392719_1491204439457_log.csv` sur [Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1).
+2. Créez le dossier `C:\PaySim\` sous Windows.
+3. Placez le fichier CSV dans : `C:\PaySim\PS_20174392719_1491204439457_log.csv`.
 
-## Configuration du Jeu de Données (Convention d'équipe)
-
-1. Téléchargez le dataset `PS_20174392719_1491204439457_log.csv` depuis [Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1).
-2. Créez un dossier **`C:\PaySim\`** à la racine de votre disque principal sous Windows.
-3. Placez le fichier CSV dans ce dossier : `C:\PaySim\PS_20174392719_1491204439457_log.csv`.
-
-> *Remarque : Le script Power Query unifié pointe automatiquement sur ce chemin absolu afin de garantir un chargement direct sans erreur de source sur tous les postes l'équipe.*
-
-## Cloner et ouvrir le projet
-
+## Cloner et Ouvrir le Dépôt
 ```bash
 git clone https://github.com/grace-moussoni/PaySim-Fraud-Analysis.git
 cd PaySim-Fraud-Analysis
 ```
-
-Ouvrez ensuite le fichier projet dans `sources_files` :
+Ouvrez le fichier projet dans Power BI Desktop :
 ```text
 sources_files/paysim_fraud_analysis.pbip
 ```
 
-Power BI Desktop chargera automatiquement le modèle sémantique, appliquera le script Power Query et ouvrira le rapport.
-
 ---
 
-## 🌿 Workflow Git
-
-Créer une branche de travail :
-```bash
-git checkout main
-git pull origin main
-git checkout -b feature/nom-tache
-```
-
-Publier ses modifications :
-```bash
-git add .
-git commit -m "feat(module): description des modifications"
-git push origin feature/nom-tache
-```
-
-Puis ouvrir une Pull Request (PR) sur GitHub.
-
----
-
-## 📂 Structure du dépôt
-
-```text
-PaySim-Fraud-Analysis/
-├── .github/
-│   └── PULL_REQUEST_TEMPLATE.md
-├── docs/
-│   ├── reports/
-│   │   ├── compte_rendu_de_reunion_3_novembre_2026.md
-│   │   └── note_de_synthese_equipe_paysim.md
-│   ├── document_de_cadrage_paysim.md
-│   └── note_d_arbitrage_technique.md
-├── sources_files/
-│   ├── paysim_fraud_analysis.Report/
-│   ├── paysim_fraud_analysis.SemanticModel/
-│   └── paysim_fraud_analysis.pbip
-├── .gitignore
-├── CONTRIBUTING.md
-├── LICENSE
-└── README.md
-```
-
----
-
-## 👥 Équipe Projet
-### Groupe 3 - Akieny Academy
+## 👥 Équipe Projet — Groupe 3 (Akieny Academy)
 
 | Membre | Rôle |
-|----------|---------|
+| :--- | :--- |
 | **Rosy Perine NGOMA IKAMA** | Cheffe de Projet / Lead Data |
 | **MOUSSONI Grace** | Repository Administrator |
-| **Christ Roland BIBILA-MANGAYI** | Data Analyst |
-| **Marthinet Berthanie de Sagesse** | Data Analyst |
-| **MBANDOU Sublime** | Data Analyst & Visualisation |
+| **Christ Roland BIBILA-MANGAYI** | Data Analyst (Axes 1 & 2) |
+| **Marthinet Berthanie de Sagesse** | Data Analyst (Axe 3) |
+| **MBANDOU Sublime** | Data Analyst & Visualisation (Axe 4 & Dashboard) |
 
 ---
 
-## 📜 Licence
+## 📜 Licence & Remerciements
 
-Ce projet est distribué sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## ⭐ Remerciements
-
-- **Akieny Academy**
-- **Kaggle & Edgar Lopez-Rojas** pour le jeu de données PaySim
-- **Microsoft Power BI**
-
----
-
-**Projet académique réalisé dans le cadre de la formation Data Analytics & IA d'Akieny Academy (Novembre 2026).**
+Projet sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.  
+Remerciements à **Akieny Academy**, **Kaggle** et **Edgar Lopez-Rojas** pour la mise à disposition du dataset PaySim.
