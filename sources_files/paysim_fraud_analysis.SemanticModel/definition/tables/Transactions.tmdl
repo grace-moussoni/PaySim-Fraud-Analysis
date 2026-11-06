@@ -1,6 +1,19 @@
 table Transactions
 	lineageTag: b1eeec62-7c9f-47e6-9543-01d8b396fddb
 
+	measure 'Taux de fraude' = ```
+			DIVIDE([Nb Fraudes], [Nb Transactions]) 
+			```
+		formatString: 0.000\ %;-0.000\ %;0.000\ %
+		lineageTag: 345fe496-3d7f-4da7-9648-7961fb3c25af
+
+	measure 'Montant frauduleux' = ```
+			CALCULATE([Montant total], Transactions[isFraud] = 1) 
+			```
+		lineageTag: 8f118566-7522-4115-86ae-1380d67ceb8b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	measure 'Nb Transactions' = COUNTROWS(Transactions)
 		formatString: 0
 		lineageTag: 8202f909-97bb-4915-b47c-ace079811467
@@ -11,21 +24,8 @@ table Transactions
 		formatString: 0
 		lineageTag: ee891c25-5154-4657-bb17-ecea07ea78ff
 
-	measure 'Taux de fraude' = ```
-			DIVIDE([Nb Fraudes], [Nb Transactions]) 
-			```
-		formatString: 0.000\ %;-0.000\ %;0.000\ %
-		lineageTag: 345fe496-3d7f-4da7-9648-7961fb3c25af
-
 	measure 'Montant total' = SUM(Transactions[amount])
 		lineageTag: c9641155-2f8f-42e0-aeaf-a5271635b876
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Montant frauduleux' = ```
-			CALCULATE([Montant total], Transactions[isFraud] = 1) 
-			```
-		lineageTag: 8f118566-7522-4115-86ae-1380d67ceb8b
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
