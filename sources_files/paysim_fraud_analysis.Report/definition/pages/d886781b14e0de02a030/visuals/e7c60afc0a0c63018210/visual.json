@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "e7c60afc0a0c63018210",
+  "position": {
+    "x": 0,
+    "y": 986.58536585365857,
+    "z": 11000,
+    "height": 92.6829268292683,
+    "width": 1919.5121951219514,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Message : Les fraudes se concentrent exclusivement sur les types TRANSFER et CASH_OUT, et le taux de risque augmente drastiquement pour atteindre 2,07 % ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt",
+                      "color": "#094780"
+                    }
+                  },
+                  {
+                    "value": "pour les transactions supérieures à 1 million.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial",
+                      "fontSize": "24pt",
+                      "color": "#094780"
+                    }
+                  }
+                ],
+                "indent": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
