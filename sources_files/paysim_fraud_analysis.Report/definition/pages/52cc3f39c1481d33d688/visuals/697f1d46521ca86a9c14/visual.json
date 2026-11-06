@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "697f1d46521ca86a9c14",
+  "position": {
+    "x": 989.28,
+    "y": 632.88,
+    "z": 13000,
+    "height": 315.36,
+    "width": 686.88,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transactions"
+                    }
+                  },
+                  "Property": "Heure"
+                }
+              },
+              "queryRef": "Transactions.Heure",
+              "nativeQueryRef": "Heure",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transactions"
+                    }
+                  },
+                  "Property": "Jour"
+                }
+              },
+              "queryRef": "Transactions.Jour",
+              "nativeQueryRef": "Jour",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transactions"
+                    }
+                  },
+                  "Property": "Nb Fraudes"
+                }
+              },
+              "queryRef": "Transactions.Nb Fraudes",
+              "nativeQueryRef": "Nb Fraudes"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

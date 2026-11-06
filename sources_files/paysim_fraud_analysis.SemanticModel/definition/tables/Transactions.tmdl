@@ -1,6 +1,66 @@
 table Transactions
 	lineageTag: b1eeec62-7c9f-47e6-9543-01d8b396fddb
 
+	measure 'Nb Transactions' = COUNTROWS(Transactions)
+		formatString: 0
+		lineageTag: 8202f909-97bb-4915-b47c-ace079811467
+
+	measure 'Nb Fraudes' = ```
+			CALCULATE([Nb Transactions], Transactions[isFraud] = 1)  
+			```
+		formatString: 0
+		lineageTag: ee891c25-5154-4657-bb17-ecea07ea78ff
+
+	measure 'Taux de fraude' = ```
+			DIVIDE([Nb Fraudes], [Nb Transactions]) 
+			```
+		formatString: 0.000\ %;-0.000\ %;0.000\ %
+		lineageTag: 345fe496-3d7f-4da7-9648-7961fb3c25af
+
+	measure 'Montant total' = SUM(Transactions[amount])
+		lineageTag: c9641155-2f8f-42e0-aeaf-a5271635b876
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Montant frauduleux' = ```
+			CALCULATE([Montant total], Transactions[isFraud] = 1) 
+			```
+		lineageTag: 8f118566-7522-4115-86ae-1380d67ceb8b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Montant moyen fraude' = DIVIDE([Montant frauduleux], [Nb Fraudes])
+		lineageTag: ebcc04b8-fe93-4d09-b230-624ba72c9a9b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Part du montant fraudé' = DIVIDE([Montant frauduleux], [Montant total])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 76bba477-6a02-447c-82a4-a161566e78c3
+
+	measure 'Nb Signalées' = ```
+			CALCULATE([Nb Transactions], Transactions[isFlaggedFraud] = 1) 
+			```
+		formatString: 0
+		lineageTag: eeda0245-ed0e-40cb-8568-36f912c0e3e1
+
+	measure 'Montant fraudé non détecté' = CALCULATE([Montant total], Transactions[isFraud] = 1, Transactions[isFlaggedFraud] = 0)
+		lineageTag: 65b04e61-31c3-4dc6-8026-b0149a917dc7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure VP = CALCULATE([Nb Transactions], Transactions[isFraud] = 1, Transactions[isFlaggedFraud] = 1)
+		formatString: 0
+		lineageTag: dba31e03-e0d2-40f8-ab23-897365cee6a8
+
+	measure FN = CALCULATE([Nb Transactions], Transactions[isFraud] = 1, Transactions[isFlaggedFraud] = 0)
+		formatString: 0
+		lineageTag: a7023cce-9ac5-4e56-90a6-e10c968133f5
+
+	measure Rappel = DIVIDE([VP], [VP] + [FN])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: f374ba36-1501-4ade-8e37-2b251c9aeb07
+
 	column step
 		dataType: int64
 		formatString: 0
