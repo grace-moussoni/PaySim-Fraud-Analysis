@@ -1,2 +1,2095 @@
 cultureInfo en-US
 
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "transaction": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "operation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "deal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contract": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "matter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "step": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "footstep": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "pace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "stride": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "amount": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "volume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "expanse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.is_fraud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "isFraud"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is fraud": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "isFraud": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fraud": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is deception": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "is deceit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "deception": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "deceit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "is scam": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "is scheme": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "is con": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "is swindle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "is racket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "is fake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.is_flagged_fraud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "isFlaggedFraud"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is flagged fraud": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "isFlaggedFraud": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "is flagged deception": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is flagged deceit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is flagged scam": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged scheme": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged con": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged swindle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged racket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged fake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged counterfeit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is flagged imitation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "jour": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.heure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Heure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "heure": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.tranche_montant": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Tranche_Montant"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tranche montant": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Tranche_Montant": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.statut_fraude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Statut_Fraude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "statut fraude": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Statut_Fraude": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.resultat_alerte": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Resultat_Alerte"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultat alerte": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Resultat_Alerte": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.depasse_seuil_20_0k": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Depasse_Seuil_200k"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "depasse seuil 20 0k": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Depasse_Seuil_200k": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.type_compte_dest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Type_Compte_Dest"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "type compte dest": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Type_Compte_Dest": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "genre compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "manner compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "variety compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "brand compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "kind compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "style compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "form compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "grouping compte dest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.incoherence_solde": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Incoherence_Solde"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "incoherence solde": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Incoherence_Solde": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.montant_nul": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Montant_Nul"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "montant nul": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Montant_Nul": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.nb_transactions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Nb Transactions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb transactions": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transactions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "nb connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nb relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "nb dealing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nb contact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nb communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nb business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dealing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.nb_fraudes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Nb Fraudes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb fraudes": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Nombre de Fraudes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.taux_de_fraude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Taux de fraude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "taux de fraude": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.montant_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Montant total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "montant total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "montant aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "montant overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.montant_frauduleux": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Montant frauduleux"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "montant frauduleux": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.montant_moyen_fraude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Montant moyen fraude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "montant moyen fraude": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.part_du_montant_fraudé": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Part du montant fraudé"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "part du montant fraudé": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.nb_signalées": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Nb Signalées"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb signalées": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.montant_fraudé_non_détecté": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Montant fraudé non détecté"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "montant fraudé non détecté": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.vp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "VP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.fn": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "FN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fn": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "transaction.rappel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions",
+			          "ConceptualProperty": "Rappel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rappel": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "transaction_has_step": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.step": {
+			          "Target": {
+			            "Entity": "transaction.step"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.step"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_steps"
+			        }
+			      ]
+			    },
+			    "transaction_has_type": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.type": {
+			          "Target": {
+			            "Entity": "transaction.type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_types"
+			        }
+			      ]
+			    },
+			    "transaction_has_amount": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.amount": {
+			          "Target": {
+			            "Entity": "transaction.amount"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.amount"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_amounts"
+			        }
+			      ]
+			    },
+			    "transaction_has_is_fraud": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.is_fraud": {
+			          "Target": {
+			            "Entity": "transaction.is_fraud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.is_fraud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_is_frauds"
+			        }
+			      ]
+			    },
+			    "transaction_has_is_flagged_fraud": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.is_flagged_fraud": {
+			          "Target": {
+			            "Entity": "transaction.is_flagged_fraud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.is_flagged_fraud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_is_flagged_frauds"
+			        }
+			      ]
+			    },
+			    "transaction_has_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.jour": {
+			          "Target": {
+			            "Entity": "transaction.jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_jour"
+			        }
+			      ]
+			    },
+			    "transaction_has_heure": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.heure": {
+			          "Target": {
+			            "Entity": "transaction.heure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.heure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_heures"
+			        }
+			      ]
+			    },
+			    "transaction_has_tranche_montant": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.tranche_montant": {
+			          "Target": {
+			            "Entity": "transaction.tranche_montant"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.tranche_montant"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_tranche_montants"
+			        }
+			      ]
+			    },
+			    "transaction_has_statut_fraude": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.statut_fraude": {
+			          "Target": {
+			            "Entity": "transaction.statut_fraude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.statut_fraude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_statut_fraudes"
+			        }
+			      ]
+			    },
+			    "transaction_has_resultat_alerte": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.resultat_alerte": {
+			          "Target": {
+			            "Entity": "transaction.resultat_alerte"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.resultat_alerte"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_resultat_alertes"
+			        }
+			      ]
+			    },
+			    "transaction_has_depasse_seuil_20_0k": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.depasse_seuil_20_0k": {
+			          "Target": {
+			            "Entity": "transaction.depasse_seuil_20_0k"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.depasse_seuil_20_0k"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_depasse_seuil_20_0ks"
+			        }
+			      ]
+			    },
+			    "transaction_has_type_compte_dest": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.type_compte_dest": {
+			          "Target": {
+			            "Entity": "transaction.type_compte_dest"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.type_compte_dest"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_type_compte_dests"
+			        }
+			      ]
+			    },
+			    "transaction_has_incoherence_solde": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.incoherence_solde": {
+			          "Target": {
+			            "Entity": "transaction.incoherence_solde"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.incoherence_solde"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_incoherence_soldes"
+			        }
+			      ]
+			    },
+			    "transaction_has_montant_nul": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.montant_nul": {
+			          "Target": {
+			            "Entity": "transaction.montant_nul"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.montant_nul"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_montant_nuls"
+			        }
+			      ]
+			    },
+			    "transaction_has_nb_transactions": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.nb_transactions": {
+			          "Target": {
+			            "Entity": "transaction.nb_transactions"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.nb_transactions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_nb_transactions"
+			        }
+			      ]
+			    },
+			    "transaction_has_nb_fraudes": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.nb_fraudes": {
+			          "Target": {
+			            "Entity": "transaction.nb_fraudes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.nb_fraudes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_nb_fraudes"
+			        }
+			      ]
+			    },
+			    "transaction_has_taux_de_fraude": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.taux_de_fraude": {
+			          "Target": {
+			            "Entity": "transaction.taux_de_fraude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.taux_de_fraude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_taux_de_fraude"
+			        }
+			      ]
+			    },
+			    "transaction_has_montant_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.montant_total": {
+			          "Target": {
+			            "Entity": "transaction.montant_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.montant_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_montant_total"
+			        }
+			      ]
+			    },
+			    "transaction_has_montant_frauduleux": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.montant_frauduleux": {
+			          "Target": {
+			            "Entity": "transaction.montant_frauduleux"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.montant_frauduleux"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_montant_frauduleux"
+			        }
+			      ]
+			    },
+			    "transaction_has_montant_moyen_fraude": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.montant_moyen_fraude": {
+			          "Target": {
+			            "Entity": "transaction.montant_moyen_fraude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.montant_moyen_fraude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_montant_moyen_fraude"
+			        }
+			      ]
+			    },
+			    "transaction_has_part_du_montant_fraudé": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.part_du_montant_fraudé": {
+			          "Target": {
+			            "Entity": "transaction.part_du_montant_fraudé"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.part_du_montant_fraudé"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_part_du_montant_fraudé"
+			        }
+			      ]
+			    },
+			    "transaction_has_nb_signalées": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.nb_signalées": {
+			          "Target": {
+			            "Entity": "transaction.nb_signalées"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.nb_signalées"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_nb_signalées"
+			        }
+			      ]
+			    },
+			    "transaction_has_montant_fraudé_non_détecté": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.montant_fraudé_non_détecté": {
+			          "Target": {
+			            "Entity": "transaction.montant_fraudé_non_détecté"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.montant_fraudé_non_détecté"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_montant_fraudé_non_détecté"
+			        }
+			      ]
+			    },
+			    "transaction_has_vp": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.vp": {
+			          "Target": {
+			            "Entity": "transaction.vp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.vp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_vp"
+			        }
+			      ]
+			    },
+			    "transaction_has_mesure": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.mesure": {
+			          "Target": {
+			            "Entity": "transaction.mesure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.mesure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_mesure"
+			        }
+			      ]
+			    },
+			    "transaction_has_fn": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.fn": {
+			          "Target": {
+			            "Entity": "transaction.fn"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.fn"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_fn"
+			        }
+			      ]
+			    },
+			    "transaction_has_rappel": {
+			      "Binding": {
+			        "ConceptualEntity": "Transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "transaction.rappel": {
+			          "Target": {
+			            "Entity": "transaction.rappel"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "transaction.rappel"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_rappel"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

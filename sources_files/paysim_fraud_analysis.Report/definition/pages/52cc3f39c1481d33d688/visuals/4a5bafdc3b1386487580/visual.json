@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "4a5bafdc3b1386487580",
+  "position": {
+    "x": 298.08,
+    "y": 991.43999999999994,
+    "z": 6000,
+    "height": 64.8,
+    "width": 1516.32,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Message : les heures 0 à 5 concentrent 25 % des fraudes pour moins de 1 % des transactions. Le nombre de fraudes ne baisse pas la nuit, alors que les transactions normales s'effondrent : le taux dépasse 22 % vers 3 h et 4 h.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "6f241656785321401bb5",
+  "position": {
+    "x": 183.6,
+    "y": 991.43999999999994,
+    "z": 15000,
+    "height": 64.8,
+    "width": 1630.8,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Message : la fraude est rare (0,129 %) mais lourde. Elle n'existe que dans TRANSFER et CASH_OUT, et chaque fraude pèse environ 8 fois une transaction normale",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
